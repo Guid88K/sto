@@ -21,12 +21,15 @@
                 </div>
                 <div class="form-group ">
                     <label for="name">Місто</label>
-                    <input list="town" name="town" value="" class="col-sm-6 custom-select custom-select-sm">
-                    @foreach($town as $t)
+                    <input list="town" name="town" value="" class="col custom-select custom-select-sm "
+                           autocomplete="off">
+
                     <datalist id="town">
-                        <option value="{{$t->name_town}}">{{$t->name_town}}</option>
-                    </datalist>
+                        @foreach($town as $t)
+                            <option value="{{$t->name_town}}">{{$t->name_town}}</option>
                         @endforeach
+                    </datalist>
+
                 </div>
 
                 <div class="form-group ">
@@ -49,21 +52,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group ">
-                    <label for="name">Дата</label>
-                    <input type="text" class="form-control" name="data"/>
-                </div>
-                <div class="form-group ">
-                    <label for="name">Година</label>
-                    <input type="text" class="form-control" name="hour"/>
-                </div>
-{{--                <div class="form-group row">--}}
-{{--                    <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>--}}
-{{--                    <div class="col-10">--}}
-{{--                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                <label for="name">Робочі дні в тижні</label>
+                <div class="form-group row">
+                    <select class="ml-3 col-2 form-control" name="start_date">
+                        <option selected="selected">Пн</option>
+                        <option>Вт</option>
+                        <option>Ср</option>
+                        <option>Чт</option>
+                        <option>Пт</option>
+                        <option>Сб</option>
+                        <option>Нд</option>
+                    </select>
 
+                    <select class="ml-3 col-2 form-control" name="end_date">
+                        <option>Пн</option>
+                        <option>Вт</option>
+                        <option>Ср</option>
+                        <option>Чт</option>
+                        <option selected="selected">Пт</option>
+                        <option>Сб</option>
+                        <option>Нд</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="example-time-input">Година відкриття</label>
+                    <input class="form-control" type="time" value="09:00" name="start_hour" id="start_hour">
+                </div>
+                <div class="form-group">
+                    <label for="example-time-input" class=" col-form-label">Година закриття</label>
+                    <input class="form-control" type="time" value="18:00" name="end_hour" id="end_hour">
+                </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-dark">Сохранить</button>
                 </div>

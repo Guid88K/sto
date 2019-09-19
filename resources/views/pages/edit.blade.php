@@ -60,16 +60,41 @@
 
                         @endif
                     @endforeach
-                </div>
-                <div class="form-group ">
-                    <label for="name">Дата</label>
-                    <input type="text" class="form-control" value="{{$sto->data}}" name="data"/>
-                </div>
-                <div class="form-group ">
-                    <label for="name">Година</label>
-                    <input type="text" class="form-control" value="{{$sto->hour}}" name="hour"/>
-                </div>
 
+                    <label for="name">Робочі дні в тижні</label>
+                    <div class="form-group row">
+                        <select class="ml-3 col-2 form-control" name="start_date" >
+                            <option selected="selected">Пн</option>
+                            <option>Вт</option>
+                            <option>Ср</option>
+                            <option>Чт</option>
+                            <option>Пт</option>
+                            <option>Сб</option>
+                            <option>Нд</option>
+                        </select>
+
+                        <select class="ml-3 col-2 form-control" name="end_date">
+                            <option>Пн</option>
+                            <option>Вт</option>
+                            <option>Ср</option>
+                            <option>Чт</option>
+                            <option selected="selected">Пт</option>
+                            <option>Сб</option>
+                            <option>Нд</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="example-time-input">Година відкриття</label>
+                        <input class="form-control" type="time" value="{{$sto->start_hour}}" name="start_hour" id="start_hour" >
+                    </div>
+                    <div class="form-group">
+                        <label for="example-time-input" class=" col-form-label">Година закриття</label>
+                        <input class="form-control" type="time" value="{{$sto->end_hour}}" name="end_hour" id="end_hour">
+                    </div>
+
+                </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-dark">Сохранить</button>
                 </div>

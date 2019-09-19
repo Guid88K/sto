@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/sto','StoController')->only([
+Route::resource('/sto_public','StoController')->only([
     'index', 'show'
 ]);
 

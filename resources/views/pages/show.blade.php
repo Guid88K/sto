@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('fonts/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/main.css')}}">
 </head>
 <body>
 <div class="container-fluid">

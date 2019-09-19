@@ -20,8 +20,10 @@ class CreateStoTable extends Migration
             $table->string('address');
             $table->string('town');
             $table->string('description');
-            $table->string('data');
-            $table->string('hour');
+            $table->string('start_date');
+            $table->string('end_data');
+            $table->string('start_hour');
+            $table->string('end_hour');
             $table->timestamps();
         });
     }

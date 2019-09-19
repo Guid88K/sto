@@ -18,10 +18,8 @@ class StoController extends Controller
     public function index()
     {
         $sto = Sto::all();
-
-//        $town = Town::all();
-
-        return view('pages.index', ['sto' => $sto]);
+        $city = Town::all();
+        return view('pages.index', ['sto' => $sto,'city'=>$city]);
     }
 
     /**

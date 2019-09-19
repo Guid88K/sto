@@ -15,9 +15,11 @@ class Sto extends Model
     protected $fillable = [
         'name',
         'photos',
+        'start_data',
+        'end_data',
+        'start_hour',
+        'end_hour',
         'description',
-        'work_day',
-        'work_hour'
     ];
 
 //    protected $searchable = [

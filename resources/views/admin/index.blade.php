@@ -15,7 +15,7 @@
             <div class="col-lg-2 mh-100 bg-dark ">
                 <div class="btn-group-vertical w-100">
                     <img class="img-fluid my-3" src="{{asset('image/logo.jpg')}}">
-                    <a href="{{url('/sto')}}"><button type="button" class="btn btn-dark w-100 mb-2">Головна</button></a>
+                    <a href="{{url('/sto_public')}}"><button type="button" class="btn btn-dark w-100 mb-2">Головна</button></a>
                     <a href="{{url('/admin/sto/create')}}"><button type="button" class="btn btn-dark w-100 mb-2 ">Добавити новину</button></a>
                     <a ><button type="button" class="btn btn-dark mb-2 w-100 ">Управління</button></a>
                     <a ><button type="button" class="btn btn-dark mb-2 w-100 ">Налаштування</button></a>

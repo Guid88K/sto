@@ -66,7 +66,7 @@
             <div class="row">
                 @foreach($sto as $s)
                     <div class="col-md-4  ">
-                        <a href="{{ route('sto.show', ['id' => $s->id])}}">
+                        <a href="{{ route('sto_public.show', ['id' => $s->id])}}">
                             <img class="img-fluid mb-3" style="width: 400px;height:200px "
                                  src="{{ asset('upload/'.$s->image)}}">
                         </a>
@@ -248,9 +248,9 @@
     };
 
     var states = [];
-    @foreach ($sto as $t)
+    @foreach ($city as $t)
 
-    states.push('{!! $t->town !!}');
+    states.push('{!! $t->name_town !!}');
 
     @endforeach
     $('#the-basics .typeahead').typeahead({
