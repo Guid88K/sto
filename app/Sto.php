@@ -34,10 +34,10 @@ class Sto extends Model
 //        ],
 //    ];
 
-//    public function town()
-//    {
-//        return $this->hasOne('App\Town');
-//    }
+    public function town()
+    {
+        return $this->hasOne('App\Town');
+    }
 
     public function contact()
     {

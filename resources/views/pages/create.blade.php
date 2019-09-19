@@ -21,8 +21,14 @@
                 </div>
                 <div class="form-group ">
                     <label for="name">Місто</label>
-                    <input type="text" class="form-control" name="town"/>
+                    <input list="town" name="town" value="" class="col-sm-6 custom-select custom-select-sm">
+                    @foreach($town as $t)
+                    <datalist id="town">
+                        <option value="{{$t->name_town}}">{{$t->name_town}}</option>
+                    </datalist>
+                        @endforeach
                 </div>
+
                 <div class="form-group ">
                     <label for="name">Адрес</label>
                     <input type="text" class="form-control" name="address"/>
@@ -51,12 +57,12 @@
                     <label for="name">Година</label>
                     <input type="text" class="form-control" name="hour"/>
                 </div>
-                <div class="form-group row">
-                    <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
-                    <div class="col-10">
-                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-                    </div>
-                </div>
+{{--                <div class="form-group row">--}}
+{{--                    <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>--}}
+{{--                    <div class="col-10">--}}
+{{--                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-dark">Сохранить</button>

@@ -45,17 +45,18 @@
                             <button class="btn btn-outline-dark bg-dark  my-sm-0" name="Search" type="submit"><i
                                     class="fa fa-search text-white"></i></button>
                         </div>
+
                     </form>
 
-{{--                    <form class="form-inline  my-2 my-lg-0 justify-content-start" action="{{asset('/query')}}"--}}
-{{--                          method="get">--}}
-{{--                        <input class="form-control border btn-outline-light mr-sm-2 w-75 pl-5" name="search"--}}
-{{--                               type="search"--}}
-{{--                               placeholder="  Search..."--}}
-{{--                               aria-label="Search">--}}
-{{--                        <button class="btn btn-outline-dark bg-dark  my-sm-0" name="Search" type="submit"><i--}}
-{{--                                class="fa fa-search text-white"></i></button>--}}
-{{--                    </form>--}}
+                    {{--                    <form class="form-inline  my-2 my-lg-0 justify-content-start" action="{{asset('/query')}}"--}}
+                    {{--                          method="get">--}}
+                    {{--                        <input class="form-control border btn-outline-light mr-sm-2 w-75 pl-5" name="search"--}}
+                    {{--                               type="search"--}}
+                    {{--                               placeholder="  Search..."--}}
+                    {{--                               aria-label="Search">--}}
+                    {{--                        <button class="btn btn-outline-dark bg-dark  my-sm-0" name="Search" type="submit"><i--}}
+                    {{--                                class="fa fa-search text-white"></i></button>--}}
+                    {{--                    </form>--}}
                 </div>
             </nav>
         </div>

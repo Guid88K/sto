@@ -27,7 +27,8 @@ class AdminStoController extends Controller
      */
     public function create()
     {
-        return view('pages.create');
+        $town = Town::all();
+        return view('pages.create', ['town' => $town]);
     }
 
     /**
@@ -57,6 +58,8 @@ class AdminStoController extends Controller
         $sto->image = $file->getClientOriginalName();
         $sto->address = $request->address;
         $sto->town = $request->town;
+
+
         $sto->description = $request->description;
         $sto->data = $request->data;
         $sto->hour = $request->hour;
@@ -64,7 +67,16 @@ class AdminStoController extends Controller
 //        $city = new Town();
 //        $city->name = $request->town;
         $sto->save();
-//        $sto->town()->save($city);
+        $check_city = Town::where('name_town', '=', $request->town)->first();
+        dd();
+        if ($check_city===null)
+        {
+            $town = new Town;
+            $town->name_town = $request->town;
+            $sto->town()->save($town);
+        }
+
+
 
         foreach ($request->contact as $con) {
             $contacts = new Contact();
