@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('../css/main.css')}}">
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid" style="  background: linear-gradient(to left, black, black,darkred);">
     <div class="row ">
         {{--         style="background-image: url('../image/mainCar.jpg'); min-height: 790px; background-size: cover; background-position: center;  ">--}}
         <div class="col-lg-12 p-0">
@@ -39,11 +39,11 @@
 
                     </ul>
 
-                    <form class="typeahead" role="search" action="{{asset('/query')}}">
+                    <form class="typeahead form-inline  " role="search" action="{{asset('/query')}}">
                         <div id="the-basics">
                             <input  class="typeahead form-control"  name="search"  type="text" placeholder="Town">
-                            <button class="btn btn-outline-dark bg-dark  my-sm-0" name="Search" type="submit"><i
-                                    class="fa fa-search text-white"></i></button>
+                            <button class="btn btn-outline-dark bg-dark pt-3 my-sm-0" name="Search" type="submit"><i
+                                    class="fa fa-search my-auto text-center text-white"></i></button>
                         </div>
 
                     </form>
@@ -63,13 +63,13 @@
             <img class="img-fluid" src="{{asset('../image/mainCar.jpg')}}">
         </div>
     </div>
-    <div class="row pt-5"  >
+    <div class="row pt-5" style="background-color: white;"  >
         <div class="col-md-12  text-center">
             <h3>Як це працює?</h3>
         </div>
     </div>
 
-    <div class="row " >
+    <div class="row " style="background-color: white;" >
         <div class="col-md-4 pb-5 text-center">
             <i class=" mb-3 fa fa-thumbs-up" style="font-size: 100px;  "></i>
             <p>Вибрати найкраще СТО за індивідуальними параметрами</p>
@@ -84,7 +84,7 @@
             <p> Записатися на СТО в зручне для вас час</p>
         </div>
     </div>
-    <div class="row  pt-5  " style="  background: linear-gradient(to left, black, black,darkred);">
+    <div class="row  pt-5  " >
 
 
         @foreach($sto as $s)
@@ -97,6 +97,7 @@
                 <p class="text-white text-center">{{$s->town}}</p>
             </div>
         @endforeach
+    </div>
 
         {{--                                        <div class="col-md-3 mx-auto ">--}}
         {{--                                            <img class="img-fluid mb-3" src="../image/photo_2019-08-05_16-02-25.jpg">--}}
@@ -149,7 +150,7 @@
                 </form>
             </div>
         </div>
-    </div>
+
     <!--    <div class="row  p-0 " style="background-color: black;">-->
     <!--        <div class="col-10 mx-auto">-->
     <!--            <div class="row">-->
