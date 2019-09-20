@@ -59,7 +59,7 @@
                                     <p class="text-center mt-3 text-dark bg-light  rounded p-2 mx-2 ">{{$s->name}}</p>
                                 </div>
                                 <div class="col-md-2 ">
-                                    <a href="{{ route('sto.show', ['id' => $s->id])}}"><button type="button" class="btn btn-dark  my-3  text-center">Переглянути</button></a>
+                                    <a href="{{ route('sto_public.show', ['id' => $s->id])}}"><button type="button" class="btn btn-dark  my-3  text-center">Переглянути</button></a>
                                 </div>
                                 <div class="col-md-2  text-center">
                                     <a href="{{ route('sto.edit', $s->id)}}"> <button type="button" class="btn btn-dark  text-center my-3 ">Редагувати</button></a>

@@ -207,6 +207,6 @@ class AdminStoController extends Controller
     {
         $sto = Sto::find($id);
         $sto->delete();
-        return redirect('sto');
+        return redirect('sto_public');
     }
 }

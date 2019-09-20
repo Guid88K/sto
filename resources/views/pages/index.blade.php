@@ -10,11 +10,11 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row "
-         style="background-image: url('../image/mainCar.jpg'); min-height: 790px; background-size: cover; background-position: center;  ">
-        <div class="col-lg-12">
+    <div class="row ">
+        {{--         style="background-image: url('../image/mainCar.jpg'); min-height: 790px; background-size: cover; background-position: center;  ">--}}
+        <div class="col-lg-12 p-0">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -41,12 +41,13 @@
 
                     <form class="typeahead" role="search" action="{{asset('/query')}}">
                         <div id="the-basics">
-                            <input class="typeahead" name="search" type="text" placeholder="Town">
+                            <input  class="typeahead form-control"  name="search"  type="text" placeholder="Town">
                             <button class="btn btn-outline-dark bg-dark  my-sm-0" name="Search" type="submit"><i
                                     class="fa fa-search text-white"></i></button>
                         </div>
 
                     </form>
+
 
                     {{--                    <form class="form-inline  my-2 my-lg-0 justify-content-start" action="{{asset('/query')}}"--}}
                     {{--                          method="get">--}}
@@ -59,48 +60,70 @@
                     {{--                    </form>--}}
                 </div>
             </nav>
+            <img class="img-fluid" src="{{asset('../image/mainCar.jpg')}}">
+        </div>
+    </div>
+    <div class="row pt-5"  >
+        <div class="col-md-12  text-center">
+            <h3>Як це працює?</h3>
+        </div>
+    </div>
+
+    <div class="row " >
+        <div class="col-md-4 pb-5 text-center">
+            <i class=" mb-3 fa fa-thumbs-up" style="font-size: 100px;  "></i>
+            <p>Вибрати найкраще СТО за індивідуальними параметрами</p>
+        </div>
+        <div class="col-md-4 pb-5 text-center">
+            <i class=" mb-3 fa fa-comments" style="font-size: 100px; "></i>
+            <p>Дізнатися про якість роботи СТО на основі відгуків реальних клієнтів
+            </p>
+        </div>
+        <div class="col-md-4 pb-5 text-center">
+            <i class=" mb-3 fa fa-clock-o" style="font-size: 100px; "></i>
+            <p> Записатися на СТО в зручне для вас час</p>
         </div>
     </div>
     <div class="row  pt-5  " style="  background: linear-gradient(to left, black, black,darkred);">
-        <div class="col-lg-10 mx-auto mb-5">
-            <div class="row">
-                @foreach($sto as $s)
-                    <div class="col-md-4  ">
-                        <a href="{{ route('sto_public.show', ['id' => $s->id])}}">
-                            <img class="img-fluid mb-3" style="width: 400px;height:200px "
-                                 src="{{ asset('upload/'.$s->image)}}">
-                        </a>
-                        <p class="text-white">{{$s->address}}</p>
-                        <p class="text-white">{{$s->town}}</p>
-                    </div>
-                @endforeach
 
-                {{--                                        <div class="col-md-3 mx-auto ">--}}
-                {{--                                            <img class="img-fluid mb-3" src="../image/photo_2019-08-05_16-02-25.jpg">--}}
-                {{--                                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in nostrum</p>--}}
-                {{--                                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in nostrum</p>--}}
 
-                {{--                                        </div>--}}
-                {{--                                        <div class="col-md-3 mx-auto ">--}}
-                {{--                                            <img class="img-fluid mb-3" src="../image/photo_2019-08-05_16-02-25.jpg">--}}
-                {{--                                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in nostrum</p>--}}
-                {{--                                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in nostrum</p>--}}
-
-                {{--                                        </div>--}}
+        @foreach($sto as $s)
+            <div class="col-md-4  ">
+                <a href="{{ route('sto_public.show', ['id' => $s->id])}}">
+                    <img class="img-fluid mb-3"
+                         src="{{ asset('upload/'.$s->image)}}">
+                </a>
+                <p class="text-white text-center">{{$s->address}}</p>
+                <p class="text-white text-center">{{$s->town}}</p>
             </div>
+        @endforeach
 
-        </div>
+        {{--                                        <div class="col-md-3 mx-auto ">--}}
+        {{--                                            <img class="img-fluid mb-3" src="../image/photo_2019-08-05_16-02-25.jpg">--}}
+        {{--                                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in nostrum</p>--}}
+        {{--                                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in nostrum</p>--}}
+
+        {{--                                        </div>--}}
+        {{--                                        <div class="col-md-3 mx-auto ">--}}
+        {{--                                            <img class="img-fluid mb-3" src="../image/photo_2019-08-05_16-02-25.jpg">--}}
+        {{--                                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in nostrum</p>--}}
+        {{--                                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in nostrum</p>--}}
+
+        {{--                                        </div>--}}
+
+
+
         <div class="row mx-auto">
-            <div class="p-4 col-md-3 text-white mx-auto">
-                <h2 class="mb-4">Pingendo</h2>
-                <p>A company for whatever you may need, from website prototyping to publishing</p>
+            <div class="p-4 col-md-3 text-white text-center text-lg-left">
+                <h2 class="mb-4  ">Pingendo</h2>
+                <p class="">A company for whatever you may need, from website prototyping to publishing</p>
                 <i class="mr-3 fa fa-twitter "></i>
                 <i class="mr-3 fa fa-facebook"></i>
                 <i class="mr-3 fa fa-google-plus"></i>
                 <i class="mr-3 fa fa-pinterest-square"></i>
 
             </div>
-            <div class="p-4 col-md-3 text-white">
+            <div class="p-4 col-md-3 text-white text-center text-lg-left">
                 <h2 class="mb-4">Mapsite</h2>
                 <ul class="list-unstyled text-white"><a href="#" class="text-white">Home</a> <br> <a href="#"
                                                                                                      class="text-white">About
@@ -108,7 +131,7 @@
                                                                                             class="text-white">Stories</a>
                 </ul>
             </div>
-            <div class="p-4 col-md-3 text-white">
+            <div class="p-4 col-md-3 text-white text-center text-lg-left">
                 <h2 class="mb-4">Contact</h2>
                 <p><a href="#" class="text-white">
                         <i class="fa d-inline mr-3 text-muted fa-phone"></i>+246 - 542 550 5462</a></p>
@@ -117,7 +140,7 @@
                 <p><a href="#" class="text-white">
                         <i class="fa d-inline mr-3 fa-map-marker text-muted"></i>365 Park Street, NY</a></p>
             </div>
-            <div class="p-4 col-md-3 text-white">
+            <div class="p-4 col-md-3 text-white text-center text-lg-left">
                 <h2 class="mb-4">Subscribe</h2>
                 <form>
                     <fieldset class="form-group"><label for="exampleInputEmail1">Get our newsletter</label> <input
@@ -180,7 +203,7 @@
     {{--    </div>--}}
 </div>
 
-</div>
+
 <script
     src="{{asset('https://code.jquery.com/jquery-3.4.1.min.js')}}"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -248,9 +271,9 @@
     };
 
     var states = [];
-    @foreach ($city as $t)
+    @foreach ($sto as $t)
 
-    states.push('{!! $t->name_town !!}');
+    states.push('{!! $t->town !!}');
 
     @endforeach
     $('#the-basics .typeahead').typeahead({

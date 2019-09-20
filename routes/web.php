@@ -29,3 +29,4 @@ Route::group( [ 'middleware' => 'admin', 'prefix' => 'admin' ], function () {
 
 Route::get('query', 'SearchController@find');
 
+

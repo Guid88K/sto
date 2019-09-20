@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{asset('fonts/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('../css/main.css')}}">
 </head>
-<body>
+<body onload="init()">
 <div class="container-fluid">
     <div class="row ">
 
@@ -57,7 +57,10 @@
         <div class="col-md-6 mx-auto ">
             <h3 class="text-white mb-4">{{$sto->name}}</h3>
             <p class="text-white">{{$sto->description}}</p>
+            <div id="map_canvas" style="width: 500px;height: 300px;"></div>
+
         </div>
+
 
 
         <div class="row mx-auto">
@@ -154,5 +157,38 @@
 <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script>
+
+    var map;
+    var geo;
+
+    function init() {
+        geo = new google.maps.Geocoder();
+        var opt = {
+            zoom: 15,
+            // center: {
+            //     // lat:31.2564,
+            //     // lng:31.6597
+            // }
+        };
+        map = new google.maps.Map(document.getElementById("map_canvas"), opt);
+        var address = "{{ $sto->town}},+{{ $sto->address}},+Украина";
+
+        geo.geocode({'address' : address}, function (results,status) {
+            if(status === google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+                var marker =  new google.maps.Marker({
+                    map:map,
+                    position:results[0].geometry.location
+                });
+            }
+            else {
+                alert('Not valid address');
+            }
+        });
+
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIsmDeJkfwTQJb0dZN-rFA1iJenf084aM"></script>
 </body>
 </html>
