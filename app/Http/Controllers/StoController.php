@@ -19,6 +19,7 @@ class StoController extends Controller
     {
         $sto = Sto::all();
         $city = Town::all();
+//        dd($city);
         return view('pages.index', ['sto' => $sto,'city'=>$city]);
     }
 

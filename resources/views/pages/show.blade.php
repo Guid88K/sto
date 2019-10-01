@@ -37,11 +37,11 @@
                         </li>
 
                     </ul>
-                    <form class="form-inline my-2 my-lg-0 mr-5  ">
-                        <input class="form-control mr-sm-2 " type="search" aria-label="Search">
-                        <button class="btn btn-outline-dark bg-dark   my-sm-0" type="submit"><i
-                                class="fa fa-search my-auto text-center text-white"></i></button>
-                    </form>
+                    {{--                    <form class="form-inline my-2 my-lg-0 mr-5  ">--}}
+                    {{--                        <input class="form-control mr-sm-2 " type="search" aria-label="Search">--}}
+                    {{--                        <button class="btn btn-outline-dark bg-dark   my-sm-0" type="submit"><i--}}
+                    {{--                                class="fa fa-search my-auto text-center text-white"></i></button>--}}
+                    {{--                    </form>--}}
                 </div>
             </nav>
 
@@ -58,48 +58,100 @@
         </div>
         <div class="col-md-6">
             <h3 class="text-white mb-4">{{$sto->name}}</h3>
-            <p class="text-white">{{$sto->description}}</p>
+            <h3 class="text-white mb-4">{{$sto->town}} {{$sto->address}}</h3>
+            <h5 class="text-white mb-4">{{$sto->description}}</h5>
+
+            @if($sto->end_hour_monday == 'null')
+                <p class="text-white">Понеділок: {{$sto->start_hour_monday}}</p>
+            @endif
+            @if(!($sto->end_hour_monday == 'null'))
+                <p class="text-white">Понеділок: {{$sto->start_hour_monday}} - {{$sto->end_hour_monday}}</p>
+            @endif
+            @if($sto->end_hour_tuesday == 'null')
+                <p class="text-white">Вівторок: {{$sto->start_hour_tuesday}}</p>
+            @endif
+            @if(!($sto->end_hour_tuesday == 'null'))
+                <p class="text-white">Вівторок: {{$sto->start_hour_tuesday}} - {{$sto->end_hour_tuesday}}</p>
+            @endif
+            @if($sto->end_hour_wednesday == 'null')
+                <p class="text-white">Середа: {{$sto->start_hour_wednesday}}</p>
+            @endif
+            @if(!($sto->end_hour_wednesday == 'null'))
+                <p class="text-white">Середа: {{$sto->start_hour_wednesday}} - {{$sto->end_hour_wednesday}}</p>
+            @endif
+
+            @if($sto->end_hour_thursday == 'null')
+                <p class="text-white">Четвер: {{$sto->start_hour_thursday}}</p>
+            @endif
+            @if(!($sto->end_hour_thursday == 'null'))
+                <p class="text-white">Четвер: {{$sto->start_hour_thursday}} - {{$sto->end_hour_thursday}}</p>
+            @endif
+
+            @if($sto->end_hour_friday == 'null')
+                <p class="text-white">П'ятниця: {{$sto->start_hour_friday}}</p>
+            @endif
+            @if(!($sto->end_hour_thursday == 'null'))
+                <p class="text-white">П'ятниця: {{$sto->start_hour_friday}} - {{$sto->end_hour_friday}}</p>
+            @endif
+
+            @if($sto->end_hour_saturday == 'null')
+                <p class="text-white">Субота: {{$sto->start_hour_saturday}}</p>
+            @endif
+            @if(!($sto->end_hour_saturday == 'null'))
+                <p class="text-white">Субота: {{$sto->start_hour_saturday}} - {{$sto->end_hour_saturday}}</p>
+            @endif
+            @if($sto->end_hour_sunday == 'null')
+                <p class="text-white">Неділя: {{$sto->start_hour_sunday}}</p>
+            @endif
+            @if(!($sto->end_hour_sunday == 'null'))
+                <p class="text-white">Неділя: {{$sto->start_hour_sunday}} - {{$sto->end_hour_sunday}}</p>
+            @endif
+            <div class="p-4 col-md-3 text-white"><h2 class="mb-2">Контакти</h2>
+                @foreach($contact as $c)
+                    <i class="fa d-inline mr-3 text-muted fa-phone"></i>{{$c->contact}}
+                @endforeach
+            </div>
 
         </div>
     </div>
 
     <div class="row px-3 text-white mb-5">
-        <div class="col-md-6">
-            <h4 class="mt-4 text-center">Comments</h4>
-            <div class="row">
-                <div class="col-md-3 text-left"><b>Name</b></div>
-                <div class="col-md-3"></div>
-                <div class="col-md-3"></div>
-                <div class="col-md-3 text-left">12.09.2019</div>
-            </div>
+        {{--        <div class="col-md-6">--}}
+        {{--            <h4 class="mt-4 text-center">Comments</h4>--}}
+        {{--            <div class="row">--}}
+        {{--                <div class="col-md-3 text-left"><b>Name</b></div>--}}
+        {{--                <div class="col-md-3"></div>--}}
+        {{--                <div class="col-md-3"></div>--}}
+        {{--                <div class="col-md-3 text-left">12.09.2019</div>--}}
+        {{--            </div>--}}
 
 
-            <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Consequatur distinctio doloribus ex labore nesciunt veritatis voluptatem!
-                Aspernatur delectus exercitationem in ipsum nemo officiis ullam.
-                Cum dolorum ipsum non sapiente tempora!</p>
+        {{--            <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit.--}}
+        {{--                Consequatur distinctio doloribus ex labore nesciunt veritatis voluptatem!--}}
+        {{--                Aspernatur delectus exercitationem in ipsum nemo officiis ullam.--}}
+        {{--                Cum dolorum ipsum non sapiente tempora!</p>--}}
 
 
-            <div class="row">
-                <div class="col-md-3 text-left"><b>Name</b></div>
-                <div class="col-md-3"></div>
-                <div class="col-md-3"></div>
-                <div class="col-md-3 text-left">12.09.2019</div>
-            </div>
-            <p class="text-left">
-                Consequatur distinctio doloribus ex labore nesciunt veritatis voluptatem!
+        {{--            <div class="row">--}}
+        {{--                <div class="col-md-3 text-left"><b>Name</b></div>--}}
+        {{--                <div class="col-md-3"></div>--}}
+        {{--                <div class="col-md-3"></div>--}}
+        {{--                <div class="col-md-3 text-left">12.09.2019</div>--}}
+        {{--            </div>--}}
+        {{--            <p class="text-left">--}}
+        {{--                Consequatur distinctio doloribus ex labore nesciunt veritatis voluptatem!--}}
 
-                Cum dolorum ipsum non sapiente!</p>
+        {{--                Cum dolorum ipsum non sapiente!</p>--}}
 
-            <h4 class="text-center mt-4 mb-5">Add Comments</h4>
-            <div>
-                <input type="text" class="form-control my-3" id="form27" placeholder="Name">
-                <textarea class="form-control mb-3" id="form30" rows="3" placeholder="Your message"></textarea>
-                <button type="submit" class="btn btn-dark">Send</button>
-            </div>
+        {{--            <h4 class="text-center mt-4 mb-5">Add Comments</h4>--}}
+        {{--            <div>--}}
+        {{--                <input type="text" class="form-control my-3" id="form27" placeholder="Name">--}}
+        {{--                <textarea class="form-control mb-3" id="form30" rows="3" placeholder="Your message"></textarea>--}}
+        {{--                <button type="submit" class="btn btn-dark">Send</button>--}}
+        {{--            </div>--}}
 
 
-        </div>
+        {{--        </div>--}}
 
         <div class="col-lg-6 mx-auto ">
 
@@ -109,48 +161,48 @@
         </div>
     </div>
     <div class="row mx-auto">
-        <div class="p-4 col-md-3 text-white mx-auto">
-            <h2 class="mb-4">Pingendo</h2>
-            <p>A company for whatever you may need, from website prototyping to publishing</p>
-            <i class="mr-3 fa fa-twitter "></i>
-            <i class="mr-3 fa fa-facebook"></i>
-            <i class="mr-3 fa fa-google-plus"></i>
-            <i class="mr-3 fa fa-pinterest-square"></i>
+        {{--        <div class="p-4 col-md-3 text-white mx-auto">--}}
+        {{--            <h2 class="mb-4">Pingendo</h2>--}}
+        {{--            <p>A company for whatever you may need, from website prototyping to publishing</p>--}}
+        {{--            <i class="mr-3 fa fa-twitter "></i>--}}
+        {{--            <i class="mr-3 fa fa-facebook"></i>--}}
+        {{--            <i class="mr-3 fa fa-google-plus"></i>--}}
+        {{--            <i class="mr-3 fa fa-pinterest-square"></i>--}}
 
-        </div>
-        <div class="p-4 col-md-3 text-white">
-            <h2 class="mb-4">Mapsite</h2>
-            <ul class="list-unstyled text-white">
-                <a href="#" class="text-white">Home</a>
-                <br>
-                <a href="#" class="text-white">About
-                    us</a>
-                <br> <a href="#" class="text-white">Our services</a> <br> <a href="#" class="text-white">Stories</a>
-            </ul>
-        </div>
-        <div class="p-4 col-md-3 text-white">
+        {{--        </div>--}}
+        {{--        <div class="p-4 col-md-3 text-white">--}}
+        {{--            <h2 class="mb-4">Mapsite</h2>--}}
+        {{--            <ul class="list-unstyled text-white">--}}
+        {{--                <a href="#" class="text-white">Home</a>--}}
+        {{--                <br>--}}
+        {{--                <a href="#" class="text-white">About--}}
+        {{--                    us</a>--}}
+        {{--                <br> <a href="#" class="text-white">Our services</a> <br> <a href="#" class="text-white">Stories</a>--}}
+        {{--            </ul>--}}
+        {{--        </div>--}}
+        {{--        <div class="p-4 col-md-3 text-white">--}}
 
-            <h2 class="mb-4">Contact</h2>
-            <p>
-                @foreach($contact as $c)
-                    <i class="fa d-inline mr-3 text-muted fa-phone"></i>{{$c->contact}}
-                @endforeach
-            </p>
-            {{--                    <p><a href="#" class="text-white">--}}
-            {{--                            <i class="fa d-inline mr-3 text-muted fa-envelope-o"></i>info@pingendo.com</a></p>--}}
-            <p>
-                <i class="fa d-inline mr-3 fa-map-marker text-muted"></i>{{$sto->address}}</p>
+        {{--            <h2 class="mb-4">Contact</h2>--}}
+        {{--            <p>--}}
+        {{--                @foreach($contact as $c)--}}
+        {{--                    <i class="fa d-inline mr-3 text-muted fa-phone"></i>{{$c->contact}}--}}
+        {{--                @endforeach--}}
+        {{--            </p>--}}
+        {{--            --}}{{--                    <p><a href="#" class="text-white">--}}
+        {{--            --}}{{--                            <i class="fa d-inline mr-3 text-muted fa-envelope-o"></i>info@pingendo.com</a></p>--}}
+        {{--            <p>--}}
+        {{--                <i class="fa d-inline mr-3 fa-map-marker text-muted"></i>{{$sto->address}}</p>--}}
 
-        </div>
-        <div class="p-4 col-md-3 text-white">
-            <h2 class="mb-4">Subscribe</h2>
-            <form>
-                <fieldset class="form-group"><label for="exampleInputEmail1">Get our newsletter</label>
-                    <input
-                        type="email" class="form-control" placeholder="Enter email"></fieldset>
-                <button type="submit" class="btn btn-outline-light">Submit</button>
-            </form>
-        </div>
+        {{--        </div>--}}
+        {{--        <div class="p-4 col-md-3 text-white">--}}
+        {{--            <h2 class="mb-4">Subscribe</h2>--}}
+        {{--            <form>--}}
+        {{--                <fieldset class="form-group"><label for="exampleInputEmail1">Get our newsletter</label>--}}
+        {{--                    <input--}}
+        {{--                        type="email" class="form-control" placeholder="Enter email"></fieldset>--}}
+        {{--                <button type="submit" class="btn btn-outline-light">Submit</button>--}}
+        {{--            </form>--}}
+        {{--        </div>--}}
     </div>
 
 </div>

@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->is_admin; // поле is_admin в таблице users
     }
+
+    public function comment()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

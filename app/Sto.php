@@ -45,4 +45,9 @@ class Sto extends Model
     {
         return $this->hasMany('App\Contact');
     }
+
+    public function comment()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }
